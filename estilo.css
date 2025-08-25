@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* para el cuerpo de la pagina */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* para el titulo */
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 3rem;
+}
+
+/* para la barra de navegacion */
+nav {
+    background: #444;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.container {
+    flex: 1;          
+    display: flex;    /* Hacemos flexible el contenedor (.container) */
+    flex-direction: row; /* En pantallas grandes: aside izquierda y main derecha */
+}
+
+/* para el menu de la izquierda */
+aside {                     
+    background: #f4f4f4;
+    padding: 1rem;
+    width: 250px;     /* ancho fijo */
+    flex-shrink: 0;  /* Para que no se achique */
+}
+
+main {
+    flex: 1;                  
+    padding: 1rem;            
+    background: #fff;       
+}
+
+/* para el pie de pagina */
+footer {        
+    background: #333;     /* fondo */
+    color: white;         /* color */
+    display: flex;
+    text-align: center;     /* centramos el texto */
+    padding: 1rem;          /* agregamos margen interno (padding) */
+}
+
+
+/* En Laptop */
+@media (max-width: 992px) { 
+    
+}
+
+
+/* En Tablet*/
+@media (max-width: 768px) { 
+    .container {
+    flex-direction: column; /* cambia la flexibilidad (aside arriba y main abajo) */
+    }
+
+    aside {
+    width: 100%;        /* el ancho del aside ahora ocupa el maximo */
+    }
+}
+
+/* En celular */
+@media (max-width: 480px) { 
+    
+}
