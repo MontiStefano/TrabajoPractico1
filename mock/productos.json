@@ -1,0 +1,26 @@
+
+
+
+[
+  {
+    "codigo": 1,
+    "nombre": "Notebook Gamer",
+    "precio": 1200.50,
+    "imagen": "img/notebook.jpg",
+    "descripcion": "Notebook gamer con procesador Intel i7 y 16GB RAM."
+  },
+  {
+    "codigo": 2,
+    "nombre": "Mouse Inalambrico",
+    "precio": 25.99,
+    "imagen": "img/mouse.jpg",
+    "descripcion": "Mouse inalámbrico ergonómico con batería recargable."
+  },
+  {
+    "codigo": 3,
+    "nombre": "Auriculares Bluetooth",
+    "precio": 59.90,
+    "imagen": "img/auriculares.jpg",
+    "descripcion": "Auriculares Bluetooth con cancelación de ruido."
+  }
+]

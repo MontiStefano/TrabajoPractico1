@@ -1,0 +1,39 @@
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    padding: 2rem;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    height: 3rem;
+}
+
+nav a{
+    background-color: grey;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:center;
+    align-content:center;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.imagenPrincipal {
+    height: 400px; 
+    padding: 5% 7%;
+    display: inline-block;
+}
+
+.nombreProducto {
+    display: inline-block;
+    
+}
