@@ -10,6 +10,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /* para el titulo */
@@ -17,66 +18,135 @@ header {
     background: #333;
     color: white;
     text-align: center;
-    padding: 3rem;
+    font-size: 3rem;
+    padding: 2rem;
 }
 
 /* para la barra de navegacion */
 nav {
-    background: #444;
-    color: white;
     display: flex;
-    justify-content: space-around;
+    height: 3rem;
+}
+
+nav a{
+    background-color: grey;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:center;
+    align-content:center;
+    text-decoration: none;
+    border: 1px solid black;
     padding: 1rem;
 }
 
+nav a:hover {
+    background: #45a049;
+  }
+
 .container {
-    flex: 1;          
-    display: flex;    /* Hacemos flexible el contenedor (.container) */
-    flex-direction: row; /* En pantallas grandes: aside izquierda y main derecha */
+    flex: 1;
+    display: flex;
+    /* Hacemos flexible el contenedor (.container) */
+    flex-direction: row;
+    /* En pantallas grandes: aside izquierda y main derecha */
 }
 
 /* para el menu de la izquierda */
-aside {                     
+aside {
     background: #f4f4f4;
     padding: 1rem;
-    width: 250px;     /* ancho fijo */
-    flex-shrink: 0;  /* Para que no se achique */
+    width: 250px;
+    /* ancho fijo */
+    flex-shrink: 0;
+    /* Para que no se achique */
+}
+
+aside a{
+    color: black;
+    text-decoration: none;
+    padding-left: 2rem;
+    font-size: 1.2rem;
+}
+
+aside a:hover{
+    color: #45a049;
 }
 
 main {
-    flex: 1;                  
-    padding: 1rem;            
-    background: #fff;       
+    flex: 1;
+    padding: 1rem;
+    background: #fff;
+}
+
+.contenido{
+    display: grid;
+    grid: auto / 50% auto;
+}
+
+
+.producto{
+    background-color: rgb(196, 196, 196);
+    border: 1px solid black;
+    display: flex;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.producto:hover {
+    background: #45a049;
+  }
+
+.producto .imagen{
+    flex: 1;
+    border: 1px solid black;
+    margin-right: 1rem;
+}
+
+.producto .texto {
+    flex: 15;
 }
 
 /* para el pie de pagina */
-footer {        
-    background: #333;     /* fondo */
-    color: white;         /* color */
-    display: flex;
-    text-align: center;     /* centramos el texto */
-    padding: 1rem;          /* agregamos margen interno (padding) */
+footer {
+    background: #333;
+    /* fondo */
+    color: white;
+    /* color */
+    text-align: center;
+    /* centramos el texto */
+    padding: 1rem;
+    /* agregamos margen interno (padding) */
 }
+
+
+
+
+
+
+
+
 
 
 /* En Laptop */
-@media (max-width: 992px) { 
-    
-}
+@media (max-width: 992px) {}
 
 
 /* En Tablet*/
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     .container {
-    flex-direction: column; /* cambia la flexibilidad (aside arriba y main abajo) */
+        flex-direction: column;
+        /* cambia la flexibilidad (aside arriba y main abajo) */
     }
 
     aside {
-    width: 100%;        /* el ancho del aside ahora ocupa el maximo */
+        width: 100%;
+        /* el ancho del aside ahora ocupa el maximo */
     }
 }
 
 /* En celular */
-@media (max-width: 480px) { 
-    
-}
+@media (max-width: 480px) {}
