@@ -1,8 +1,14 @@
+:root{
+    --color1: #0D0F36;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 /* para el cuerpo de la pagina */
 body {
@@ -13,9 +19,10 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+
 /* para el titulo */
 header {
-    background: #333;
+    background: var(--color1);
     color: white;
     text-align: center;
     font-size: 3rem;
@@ -126,10 +133,6 @@ footer {
 
 
 
-
-
-
-
 /* En Laptop */
 @media (max-width: 992px) {
     .contenido{
@@ -150,8 +153,9 @@ footer {
         /* el ancho del aside ahora ocupa el maximo */
     }
 
-    
 }
+
+
 
 /* En celular */
 @media (max-width: 480px) {
