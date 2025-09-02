@@ -1,10 +1,24 @@
+:root {
+    --color1: #0d0f36;
+    --color2: #294380;
+    --color3: #69d2cd;
+    --color4: #b9f1d6;
+    --color5: #f1f6ce;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 header {
-    background: #333;
+    background: var(--color2);
     color: white;
     text-align: center;
     font-size: 3rem;
     padding: 2rem;
     margin: 0;
+    font-family: Georgia;
 }
 
 nav {
@@ -12,28 +26,284 @@ nav {
     height: 3rem;
 }
 
-nav a{
-    background-color: grey;
+
+nav a {
+    background-color: var(--color2);
     color: #fff;
     flex: 1;
     text-align: center;
-    flex-direction:row;
-    flex-wrap:nowrap;
-    justify-content:space-around;
-    align-items:center;
-    align-content:center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
     text-decoration: none;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     padding: 1rem;
 }
 
-.imagenPrincipal {
-    height: 400px; 
-    padding: 5% 7%;
-    display: inline-block;
+nav a:hover {
+    background-color: #485e92;
 }
 
-.nombreProducto {
+
+/*seccion foto y info del articulo*/
+
+article {
+    display: flex;
+    justify-content: center;
+    background-color: #fcebb6;
+}
+
+.completo {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    background-color: white;
+    margin: 5%;
+    align-items: flex-start;
+    border-radius: 9px;
+
+}
+
+.contenedor_imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    position: sticky;
+    flex: 1;
+    align-self: flex-start;
+    top: 20px;
+    max-width: 40%;
+}
+
+.contenedor_texto {
     display: inline-block;
-    
+    justify-content: center;
+    margin: 5% 5% 5% 2%;
+    flex: 2;
+    border: 1.5px #e6e0e0 solid;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 40%;
+
+}
+
+.imagenPrincipal {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+     margin: 0 auto;
+}
+
+.titulo_producto {
+    justify-content: center;
+    margin: 0;
+    padding: 5px 0 0 0;
+}
+
+.contenedor_precio {
+    display: flex;
+    justify-content: left;
+    margin: 0;
+    padding: 5px 0;
+    padding: 0;
+}
+
+.precio {
+    font-size: 2rem;
+    margin: 2% 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+.contenedor_envio {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.envio {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.contenedor_botones {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border-radius: 7px;
+    background-color: var(--color3);
+    color: white;
+    margin: 5px 5px 5px 0;
+    justify-content: center;
+    display: inline;
+    height: 2.2rem;
+    width: 8rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(15, 126, 120);
+}
+
+.contenedor_medios {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 1.2rem;
+
+}
+
+.contenedor_medios h3 p {
+    text-decoration: underline;
+}
+
+.contenedor_medios img {
+    margin: 10px 10px 10px 0;
+}
+
+.contenedor_medios img:hover {
+    background-color: #e9e4e4;
+    cursor: pointer;
+    border-radius: 9px;
+}
+
+.contenedor_estrellas {
+    margin: 0;
+    padding: 7px 0 15px 0;
+}
+
+/*Tambien podria interesarte*/
+.imagen_interesarte {
+    width: 15%;
+    height: 500px;
+    margin: 0 7px;
+}
+
+.imagenes_interesarte {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+footer {
+    background: var(--color2);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+/* ========== 1) PC +1200px (desktop completo) ========== */
+@media (min-width: 1200px) {
+  .completo {
+    flex-direction: row;
+    margin: 5%;
+  }
+
+  .contenedor_imagen {
+    max-width: 40%;
+    position: sticky;
+    top: 20px;
+  }
+
+  .contenedor_texto {
+    max-width: 40%;
+  }
+}
+
+/* ========== 2) Laptop (992px - 1199px) ========== */
+@media (max-width: 1199px){
+  .completo {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .contenedor_imagen {
+    position: sticky;
+    top: 15px;
+  }
+
+  .contenedor_texto {
+    padding: 20px;
+  }
+}
+
+/* ========== 3) Tablet (768px - 991px) ========== */
+@media (max-width: 992px) {
+
+  .completo {
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
+  }
+
+  .contenedor_imagen {
+    max-width: 100%;
+    margin: 4%;
+    margin-bottom: 0;
+    position: static;
+  }
+
+  .contenedor_texto {
+    max-width: 90%;
+    margin: 4%;
+    margin-bottom: 4%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contenedor_imagen {
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  
+}
+
+/* ========== 4) Celular (<480px) ========== */
+@media (max-width: 480px) {
+  header {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .completo {
+    flex-direction: column;
+    margin: 1%;
+  }
+
+  .contenedor_imagen,
+  .contenedor_texto {
+    max-width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    position: static; /* quita sticky */
+  }
+
+  .precio {
+    font-size: 1.2rem;
+  }
+
+  .envio {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
 }
