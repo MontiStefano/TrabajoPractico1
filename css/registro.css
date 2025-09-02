@@ -1,9 +1,51 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root{
+    --color1: #0D0F36;
+    --color2: #294380 ;
+    --color3: #69d2cd ;
+    --color4: #b9f1d6 ;
+    --color5: #f1f6ce ;
+    }
+header {
+    background: var(--color1);
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    padding: 2rem;
 }
 
-article {
+/* para la barra de navegacion */
+nav {
+    display: flex;
+    height: 3rem;
+}
+
+
+nav a{
+    background-color: var(--color2);
+    color: #fff;
+    flex: 1;
+    text-align: center;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:center;
+    align-content:center;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+nav a:hover {
+    background-color: #485e92;
+  }
+
+@media (min-width: 1200px) {
+    article {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +57,8 @@ article {
     background-color: #fcebb6;
     padding: 20px;
     border-radius: 10px;
-    height: 350px;
+    height: 90%;
+    width: 40%;
 }
 
 .titulo_inicio {
@@ -23,27 +66,61 @@ article {
     justify-content: center;
     align-items: center;
     padding: 10%;
-    padding-top: 15%;
+    padding-bottom: 6%;
+    font-size: 1.8rem;
 }
 
+#formulario {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3%
+}
+
+#formulario input {
+    padding: 5px;
+    margin: 3%;
+    border-radius: 10px;
+    width: 60%;
+    height: 50px;
+}
+
+.boton {
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 35px;
+}
+
+.boton:hover {
+    cursor: pointer;
+    background-color: #999;
+}
 
 .recordar {
-    margin: 5%;
+    display: flex; 
+    justify-content: left;
+    margin: 12%;
+    margin-top: 5%;
 }
 
-.boton_inicio {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-button {
-    border-radius: 50px;
-    width: 100%;
-    height: 2rem;
-    margin: 5%;
+.recordar input:hover {
+    cursor: pointer;
 }
 
 .parrafo {
-   padding: 5%;
+    margin: 10%;
 }
+}
+
+
+
+
+
+
+
+
+
+
+
