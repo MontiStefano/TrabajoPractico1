@@ -26,7 +26,7 @@ body {
 
 /* para el titulo */
 header {
-    background: var(--color1);
+    background: var(--color2);
     color: white;
     text-align: center;
     font-size: 3rem;
@@ -68,12 +68,14 @@ nav a:hover {
 
 /* para el menu de la izquierda */
 aside {
-    background: var(--color4);
+    background: var(--color3);
     padding: 1rem;
     width: 250px;
     /* ancho fijo */
     flex-shrink: 0;
     /* Para que no se achique */
+    margin: 1rem;
+    border-radius: 1rem;
 }
 
 aside a{
@@ -89,7 +91,7 @@ aside a:hover{
 
 main {
     flex: 1;
-    background: #fcebb6;
+    background: white;
 }
 
 .contenido{
@@ -105,10 +107,10 @@ main {
 
 
 .producto{
-    background-color: var(--color3);
-    border: 1px solid black;
+    background-color: var(--color5);
     text-decoration: none;
     color: inherit;
+    border-radius: 0.5rem;
     display: flex;
     padding: 1rem;
 }
@@ -116,7 +118,7 @@ main {
 
 
 .producto:hover {
-    background: #99d4d1;
+    background: #b2b694;
   }
 
 .producto .imagen{

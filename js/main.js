@@ -11,7 +11,7 @@ async function cargarProductos() {
         const response = await fetch("http://localhost:3000/productos"); // Pedimos los productos al JSON Server
 
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`); // Corrobora que no haya error
-
+ 
         const productos = await response.json();
         console.log(productos); // Muestra el json de productos
 
@@ -34,6 +34,7 @@ async function cargarProductos() {
                     <h3 class="nombre">${prod.nombre}</h3>
                     <h4 class="precio">$${prod.precio}</h4>
                     <p class="descripcion">${prod.descripcion}</p>
+                    <p class="calificacion">${prod.calificacion}</p>
                 </div>
             `;
 

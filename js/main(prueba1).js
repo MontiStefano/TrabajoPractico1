@@ -3,7 +3,7 @@ const contenedor = document.querySelector('#contenedor-productos'); // creamos l
 
 // recorremos todos los productos de productos.json
 productos.forEach(producto => {
-    const div = document.createElement('div'); // crea un div y lo guarda en memoria
+    const div = document.createElement('div'); // crea un div
     div.classList.add('producto'); // le agrega la clase producto
 
     // le agregamos el contenido al div utilizando los datos de cada producto de productos.json 
