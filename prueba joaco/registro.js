@@ -1,3 +1,15 @@
+const botonIniciarSesion = document.querySelector('.botonIniciarSesion');
+const botonRegistrarse = document.querySelector('.botonRegistrarse');
+const wrapper = document.querySelector('.wrapper');
+
+botonRegistrarse.addEventListener('click', () => {
+    wrapper.classList.toggle('active')
+});
+
+
+
+
+
 const miFormulario = document.getElementById("formulario");
 
 miFormulario.addEventListener("submit", function (e) {

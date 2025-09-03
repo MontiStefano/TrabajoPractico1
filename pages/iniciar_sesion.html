@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" type="text/css" href="../css/iniciar_sesion.css">
+</head>
+<body>
+  <header>MI PAGINA</header>
+  <nav>
+      <a href="../index.html">INICIO</a>
+      <a href="">CARRITO</a>
+      <a href="#">INICIAR SESIÓN</a>
+      <a href="">SOBRE NOSOTROS</a>
+  </nav>
+
+  <main class="contenedor">
+    <div class="formulario_contenedor iniciar_sesion">
+      <form action="" id="formularioInicio">
+        <h2>Iniciar Sesión</h2>
+        <div class="grupo_input">
+          <input type="text" id="userInicio">
+          <label for="">Nombre de Usuario</label>
+        </div>
+        <div class="grupo_input">
+          <input type="password">
+          <label for="">Contraseña</label>
+        </div>
+        <div class="recordar">
+          <label><input type="checkbox" id="passInicio"> Recuérdame</label>
+        </div>
+        <button type="submit">Iniciar Sesión</button>
+        <div class="enlace_registro">
+          <p>¿No tienes una cuenta? <a href="#" class="btn_registro">Regístrate</a></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="formulario_contenedor registrarse">
+      <form action="" id="formularioRegistro">
+        <h2>Regístrate</h2>
+        <div class="grupo_input">
+          <input type="text" id="userRegistro">
+          <label for="">Nombre de Usuario</label>
+        </div>
+        <div class="grupo_input">
+          <input type="email" id="emailRegistro">
+          <label for="">Correo Electrónico</label>
+        </div>
+        <div class="grupo_input">
+          <input type="password" id="passRegistro">
+          <label for="">Contraseña</label>
+        </div>
+        <div class="recordar">
+          <label><input type="checkbox"> Estoy de acuerdo con los términos y condiciones.</label>
+        </div>
+        <button type="submit">Registrarse</button>
+        <div class="enlace_registro">
+          <p>¿Ya tienes una cuenta? <a href="#" class="btn_iniciar">Inicia Sesión</a></p>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="../js/iniciar_sesion.js"></script>
+</body>
+</html>
