@@ -6,12 +6,11 @@
 async function cargarProductos() {
     try {
         console.log("función iniciada");
-
         
         const response = await fetch("http://localhost:3000/productos"); // Pedimos los productos al JSON Server
 
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`); // Corrobora que no haya error
- 
+        
         const productos = await response.json();
         console.log(productos); // Muestra el json de productos
 
@@ -28,7 +27,7 @@ async function cargarProductos() {
             //modifica el contenido de <a>
             a.innerHTML = `
                 <div class="imagen">
-                    <img src="assets/images/${prod.imagen}" alt="${prod.nombre}" style="width: 64px; height: 64px;">
+                    <img src="assets/images/${prod.imagen1}" alt="${prod.nombre}" style="width: 64px; height: 64px;">
                 </div>
                 <div class="texto">
                     <h3 class="nombre">${prod.nombre}</h3>

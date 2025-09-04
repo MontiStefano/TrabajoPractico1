@@ -1,0 +1,112 @@
+:root{
+    --color1: #0D0F36;
+    --color2: #294380 ;
+    --color3: #69d2cd ;
+    --color4: #b9f1d6 ;
+    --color5: #f1f6ce ;
+    }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* para el cuerpo de la pagina */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/* para el titulo */
+header {
+    background: var(--color2);
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+/* para la barra de navegacion */
+nav {
+    display: flex;
+    height: 3rem;
+}
+
+
+nav a{
+    background-color: var(--color2);
+    color: #fff;
+    flex: 1;
+    text-align: center;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:center;
+    align-content:center;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+nav a:hover {
+    background-color: #485e92;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    /* Hacemos flexible el contenedor (.container) */
+    flex-direction: row;
+    /* En pantallas grandes: aside izquierda y main derecha */
+}
+
+/* para el menu de la izquierda */
+aside {
+    background: var(--color3);
+    padding: 1rem;
+    width: 250px;
+    /* ancho fijo */
+    flex-shrink: 0;
+    /* Para que no se achique */
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+aside a{
+    color: black;
+    text-decoration: none;
+    padding-left: 2rem;
+    font-size: 1.2rem;
+}
+
+aside a:hover{
+    color: var(--color1);
+}
+
+main {
+    flex: 1;
+    background: white;
+}
+
+.contenido{
+    padding: 1rem;
+    
+}
+
+/* para el pie de pagina */
+footer {
+    background: var(--color1);
+    /* fondo */
+    color: white;
+    /* color */
+    text-align: center;
+    /* centramos el texto */
+    padding: 1rem;
+    /* agregamos margen interno (padding) */
+}
