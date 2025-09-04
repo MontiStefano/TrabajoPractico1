@@ -38,6 +38,8 @@ header .logo{
     justify-content: center;
     width: 150px;
     height: auto;
+    opacity: 0;
+    animation: aparecer 1s ease forwards;
 }
 
 header .titulo{
@@ -45,16 +47,16 @@ header .titulo{
     font-size: 1.5rem;
     color: white;
     font-family: 'Titulo', Arial, Helvetica, sans-serif;
+    opacity: 0;
+    animation: aparecer 1s ease forwards;
 }
-
-
 
 /* para la barra de navegacion */
 nav {
     display: flex;
     height: 3rem;
+    animation: aparecer_nav 1.2s ease forwards;
 }
-
 
 nav a{
     background-color: var(--color2);
@@ -92,6 +94,7 @@ aside {
     /* Para que no se achique */
     margin: 1rem;
     border-radius: 1rem;
+    animation: aparecer 1s ease forwards;
 }
 
 aside a{
@@ -121,7 +124,6 @@ main {
     gap: 1rem;
 }
 
-
 .producto{
     background-color: var(--color5);
     text-decoration: none;
@@ -131,10 +133,9 @@ main {
     padding: 1rem;
 }
 
-
-
 .producto:hover {
     background: #b2b694;
+    animation: agrandar 0.5s forwards;
   }
 
 .producto .imagen{
@@ -180,7 +181,6 @@ footer {
     }
 }
 
-
 /* En Tablet*/
 @media (max-width: 768px) {
     /* para el titulo */
@@ -214,8 +214,6 @@ footer {
 
 }
 
-
-
 /* En celular */
 @media (max-width: 480px) {
     /* para el titulo */
@@ -232,33 +230,51 @@ footer {
     }
 
 
-  aside {
-    width: auto;
-    height: 38px;       /* solo se ve una barra angosta */
-    overflow: hidden;   /* oculta el contenido extra */
-    cursor: pointer;    /* cuando el cursor pasa encima */
-    position: relative;        /* saca el padding para que no empuje contenido */
-    padding: 0 1rem;
-  }
+    aside {
+        width: auto;
+        height: 38px;       /* solo se ve una barra angosta */
+        overflow: hidden;   /* oculta el contenido extra */
+        cursor: pointer;    /* cuando el cursor pasa encima */
+        position: relative;        /* saca el padding para que no empuje contenido */
+        padding: 0 1rem;
+    }
 
-  aside::before {
-    content: "☰ Menu"; /* icono + texto que hace de "header" del menú */
-    display: block;
-    background: var(--color3);
-    padding: 0.5rem;
-    font-weight: bold;
-  }
+    aside::before {
+        content: "☰ Menu"; /* icono + texto que hace de "header" del menú */
+        display: block;
+        background: var(--color3);
+        padding: 0.5rem;
+        font-weight: bold;
+    }
 
-  aside:hover {
-    height: auto;       /* al hacer hover se despliega */
-    padding: 0 1rem 1rem;      /* recupera padding normal */
-  }
+    aside:hover {
+        height: auto;       /* al hacer hover se despliega */
+        padding: 0 1rem 1rem;      /* recupera padding normal */
+    }
 }
-
 
 @font-face {
     font-family: 'Titulo'; 
     src: url('../assets/fonts/Dreamline2.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+
+@keyframes agrandar {
+    from{
+        transform: scale(1);
+    }to{
+        transform: scale(1.03);
+    }
+}
+
+@keyframes aparecer {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes aparecer_nav {
+    from { transform: translateY(-20px);}
+    to { transform: translateY(0); }
 }
