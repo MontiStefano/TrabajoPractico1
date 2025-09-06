@@ -1,7 +1,4 @@
 
-
-
-
 //FUNCION PARA CARGAR LOS PRODUCTOS
 async function cargarProductos() {
     try {
@@ -22,13 +19,13 @@ async function cargarProductos() {
         productos.forEach(prod => {
             const a = document.createElement("a"); // Crea la etiqueta <a> donde va a estar el producto
             a.classList.add("producto"); // Le pone la clase "producto"
-            a.href = `pages/elemento.html`; // le asigna el href
-
+            a.href = `pages/elemento.html?id=${prod.id}`; // le asigna el href
+            console.log(`esta es la url ${a.href}`);
 
             //modifica el contenido de <a>
             a.innerHTML = `
                 <div class="imagen">
-                    <img src="assets/images/${prod.imagen}" alt="${prod.nombre}" style="width: 64px; height: 64px;">
+                    <img src="assets/images/${prod.imagen1}" alt="${prod.nombre}" style="width: 64px; height: 64px;">
                 </div>
                 <div class="texto">
                     <h3 class="nombre">${prod.nombre}</h3>

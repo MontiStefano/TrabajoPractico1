@@ -174,3 +174,12 @@ button {
 .enlace_registro p a:visited {
   color: rgb(22, 22, 199);
 }
+
+footer {
+    background: var(--color1);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 19%;
+    width: 100%;
+}
