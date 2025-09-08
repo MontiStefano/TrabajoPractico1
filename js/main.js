@@ -3,15 +3,15 @@
 async function cargarProductos() {
     try {
         console.log("función iniciada");
-        
+
         const response = await fetch("http://localhost:3000/productos"); // Pedimos los productos al JSON Server
 
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`); // Corrobora que no haya error
-        
+
         const productos = await response.json();
         console.log(productos); // Muestra el json de productos
 
-        
+
         const contenedor = document.getElementById("contenedor-productos");  // Seleccionamos el contenedor donde van a ir los productos
 
         // Recorremos cada producto y creamos el HTML dinámico
@@ -42,4 +42,30 @@ async function cargarProductos() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", cargarProductos);  // Ejecutar la función pero cuando la página cargue (por las dudas)
+document.addEventListener("DOMContentLoaded", cargarProductos);  // Ejecutar la función pero cuando la página cargue (por las dudas)}
+
+const boton_modo = document.getElementById("boton_modo");
+const body = document.body;
+
+const modo_guardado = localStorage.getItem("modo"); //revisa que modo hay guardado
+
+if (modo_guardado === "oscuro") {
+  body.classList.add("oscuro");
+  boton_modo.textContent = "☀️";
+} else {
+  boton_modo.textContent = "🌙";
+}
+
+boton_modo.addEventListener("click", () => {
+    body.classList.toggle("oscuro");
+
+    if (body.classList.contains("oscuro")) {
+        boton_modo.textContent = "☀️";
+        localStorage.setItem("modo", "oscuro");
+    } else {
+        boton_modo.textContent = "🌙"
+        localStorage.setItem("modo", "claro");
+    }
+});
+
+

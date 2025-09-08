@@ -3,8 +3,8 @@ async function cargarProductoEspecifico() {
     try {
         console.log("iniciando funcion");
 
-        const infoUrl = new URLSearchParams(window.location.search);
-        const idUrl = infoUrl.get("id");
+        const infoUrl = new URLSearchParams(window.location.search); // toma TODOS los parametros de la URL generada
+        const idUrl = infoUrl.get("id"); // toma el ID de la URL
 
         const response = await fetch(`http://localhost:3000/productos/${idUrl}`);
 
@@ -50,7 +50,7 @@ async function cargarProductoEspecifico() {
                 <div>
 
                     <h3 class="descripcion">Descripción del producto:</h3> 
-                    <p class="descripcion_parrafo">${productos.lampara}</p>
+                    <p class="descripcion_parrafo">${productos.descripcionDetallada}</p>
                 </div>
             </div>
         </div>`;

@@ -1,9 +1,17 @@
 :root {
-  --color1: #F5F5F5; 
-  --color2: #FF6B35; 
-  --color3: #2D3142; 
-  --color4: #4F5D75; 
-  --color5: #FFFFFF; 
+    --color1: #F5F5F5;
+    --color2: #E76F51;
+    --color3: #485e92;
+    --color4: #4F5D75;
+    --color5: #FFFFFF;
+}
+
+body.oscuro {
+  --color1: #4F5D75;
+  --color2: #E76F51; 
+  --color3: #2D3142;
+  --color4: #2D3142;
+  --color5: #4F5D75; 
 }
 
 * {
@@ -13,12 +21,56 @@
 }
 
 header {
-  background: var(--color3);
-  color: white;
-  text-align: center;
-  font-size: 3rem;
-  padding: 2rem;
-  width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    background: var(--color3);
+    padding: 2rem 10%;
+    width: 100%;
+}
+
+header .logo {
+    justify-content: center;
+    width: 150px;
+    height: auto;
+    opacity: 0;
+    animation: aparecer 1s ease forwards;
+}
+
+header .titulo {
+    justify-content: left;
+    font-size: 1.4rem;
+    color: white;
+    font-family: 'Titulo', Arial, Helvetica, sans-serif;
+    opacity: 0;
+    animation: aparecer 1s ease forwards;
+    width: 100%;
+}
+
+
+.contenedor_boton {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-left: auto;
+}
+
+#boton_modo {
+    height: 60px;
+    width: 60px;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4F5D75;
+    border-radius: 100%;
+}
+
+#boton_modo:hover {
+    cursor: pointer;
 }
 
 nav {
@@ -92,8 +144,12 @@ body {
 
 h2 {
   font-size: 30px;
-  color: var(--color3);
+  color: var(--color2);
   text-align: center;
+}
+
+body.oscuro h2 {
+  color: white;
 }
 
 .grupo_input {
@@ -189,4 +245,24 @@ footer {
   padding: 1rem;
   margin-top: auto;
   width: 100%;
+}
+
+
+@font-face {
+    font-family: 'Titulo';
+    src: url('../assets/fonts/Dreamline2.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes aparecer {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
