@@ -1,6 +1,5 @@
 const btnIniciar = document.querySelector('.btn_iniciar');
 const btnRegistro = document.querySelector('.btn_registro');
-
 const contenedor = document.querySelector('.contenedor');
 
 btnRegistro.addEventListener('click', () => {
@@ -14,49 +13,25 @@ btnIniciar.addEventListener('click', () => {
 //validar inicio sesion
 const miFormulario = document.getElementById("formularioInicio");
 
-miFormulario.addEventListener("submit", function (e) {
-    e.preventDefault();
-    console.log("enviado");
+const formularioInicio = document.getElementById("formularioInicio");
 
-    const bandera = validarFormulario()
-
-    if (bandera) {
-        alert("Usuario logeado correctamente");
-    } else {
-        alert("Datos incorrectos");
-    }
-
+formularioInicio.addEventListener("submit", function (e) {
+  e.preventDefault();
+  if (validarLogin()) {
+    alert("Sesión iniciada con éxito");
+  } else {
+    alert("Datos erróneos");
+  }
 });
 
-function validarFormulario() {
-    const usuario = validarUsuario()
-    const contrasenia = validarContraseña()
+function validarLogin() {
+  const usuario = document.getElementById("userInicio").value.trim();
+  const contrasenia = document.getElementById("passInicio").value.trim();
 
-    if (usuario && contrasenia) {
-        return true;
-    } else {
-        return false;
-    }
+  return usuario !== "" && contrasenia !== "";
 }
 
-function validarUsuario() {
-    const usuario = document.getElementById("userInicio").value.trim();
-
-    if (usuario == "") {
-        return false
-    }
-
-    return true;
-}
-
-function validarContraseña() {
-    const contrasenia = document.getElementById("passInicio").value.trim();
-
-    if (contrasenia == "") {
-        return false
-    }
-
-    return true;
+//validar registro
 
 }
 
