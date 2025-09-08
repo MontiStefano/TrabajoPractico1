@@ -24,7 +24,7 @@ async function cargarProductos() {
             //modifica el contenido de <a>
             a.innerHTML = `
                 <div class="imagen">
-                    <img src="assets/images/${prod.imagen1}" alt="${prod.nombre}" style="width: 64px; height: 64px; border: 1px solid black; border-radius: 5px;">
+                    <img src="assets/images/${prod.imagen1}" alt="${prod.nombre}" class="miniatura">
                 </div>
                 <div class="texto">
                     <h3 class="nombre">${prod.nombre}</h3>

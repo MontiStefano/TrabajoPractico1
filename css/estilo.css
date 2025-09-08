@@ -145,6 +145,13 @@ main {
     margin-right: 1rem;
 }
 
+.producto .imagen .miniatura{
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--color4);
+    border-radius: 5px;
+}
+
 .producto .texto {
     flex: 15;
 }
