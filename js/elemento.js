@@ -50,7 +50,7 @@ async function cargarProductoEspecifico() {
                 <div>
 
                     <h3 class="descripcion">Descripción del producto:</h3> 
-                    <p class="descripcion_parrafo">${productos.lampara}</p>
+                    <p class="descripcion_parrafo">${productos.descripcionDetallada}</p>
                 </div>
             </div>
         </div>`;

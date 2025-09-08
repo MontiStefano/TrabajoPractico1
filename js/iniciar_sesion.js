@@ -10,7 +10,7 @@ btnIniciar.addEventListener('click', () => {
   contenedor.classList.remove('activo');
 });
 
-// inicio sesion nuevo
+// inicio sesion
 
 const formularioInicio = document.getElementById("formularioInicio");
 
