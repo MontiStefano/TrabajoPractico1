@@ -1,9 +1,9 @@
 :root {
-    --color1: #0d0f36;
-    --color2: #294380;
-    --color3: #69d2cd;
-    --color4: #b9f1d6;
-    --color5: #f1f6ce;
+    --color1: #F5F5F5;
+    --color2: #FF6B35;
+    --color3: #2D3142;
+    --color4: #4F5D75;
+    --color5: #FFFFFF;
 }
 
 * {
@@ -12,23 +12,39 @@
 }
 
 header {
-    background: var(--color2);
-    color: white;
-    text-align: center;
-    font-size: 3rem;
-    padding: 2rem;
-    margin: 0;
-    font-family: Georgia;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    background: var(--color3);
+    padding: 2rem 10%;
 }
+
+header .logo{
+    justify-content: center;
+    width: 150px;
+    height: auto;
+    opacity: 0;
+    animation: aparecer 1s ease forwards;
+}
+
+header .titulo{
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'Titulo', Arial, Helvetica, sans-serif;
+    opacity: 0;
+    animation: aparecer 1s ease forwards;
+}
+
 
 nav {
     display: flex;
     height: 3rem;
 }
 
-
 nav a {
-    background-color: var(--color2);
+    background-color: var(--color3);
     color: #fff;
     flex: 1;
     text-align: center;
@@ -38,21 +54,18 @@ nav a {
     align-items: center;
     align-content: center;
     text-decoration: none;
-    /*border: 1px solid black;*/
     padding: 1rem;
 }
 
 nav a:hover {
-    background-color: #485e92;
+    background-color: var(--color2);
 }
 
-
-/*seccion foto y info del articulo*/
-
+/* seccion foto y info del articulo */
 article {
     display: flex;
     justify-content: center;
-    background-color: #fcebb6;
+    background-color: var(--color1);
 }
 
 .completo {
@@ -61,11 +74,10 @@ article {
     width: auto;
     max-width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: var(--color5);
     margin: 5%;
     align-items: flex-start;
     border-radius: 9px;
-
 }
 
 .contenedor_imagen {
@@ -89,7 +101,6 @@ article {
     border-radius: 10px;
     padding: 30px;
     max-width: 40%;
-
 }
 
 .imagenPrincipal {
@@ -97,7 +108,7 @@ article {
     height: auto;
     display: block;
     border-radius: 8px;
-     margin: 0 auto;
+    margin: 0 auto;
 }
 
 .titulo_producto {
@@ -110,7 +121,6 @@ article {
     display: flex;
     justify-content: left;
     margin: 0;
-    padding: 5px 0;
     padding: 0;
 }
 
@@ -119,6 +129,7 @@ article {
     margin: 2% 0;
     padding: 0;
     font-weight: 500;
+    color: var(--color2); /* precios en naranja */
 }
 
 .contenedor_envio {
@@ -127,7 +138,7 @@ article {
 }
 
 .envio {
-    color: black;
+    color: var(--color3);
     font-size: 1.5rem;
 }
 
@@ -139,25 +150,27 @@ article {
 
 button {
     border-radius: 7px;
-    background-color: var(--color3);
+    background-color: var(--color2);
     color: white;
     margin: 5px 5px 5px 0;
     justify-content: center;
     display: inline;
     height: 2.2rem;
     width: 8rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 button:hover {
-    cursor: pointer;
-    background-color: rgb(15, 126, 120);
+    background-color: #e65b2a; /* naranja más oscuro */
 }
 
 .contenedor_medios {
     margin: 0;
     padding: 5px 0;
     font-size: 1.2rem;
-
+    color: var(--color4);
 }
 
 .contenedor_medios h3 p {
@@ -169,7 +182,7 @@ button:hover {
 }
 
 .contenedor_medios img:hover {
-    background-color: #e9e4e4;
+    background-color: var(--color1);
     cursor: pointer;
     border-radius: 9px;
 }
@@ -179,7 +192,7 @@ button:hover {
     padding: 7px 0 15px 0;
 }
 
-/*Tambien podria interesarte*/
+/* Tambien podria interesarte */
 .imagen_interesarte {
     width: 15%;
     height: 500px;
@@ -191,15 +204,12 @@ button:hover {
     justify-content: center;
 }
 
-
-
 footer {
-    background: var(--color2);
+    background: var(--color3);
     color: white;
     text-align: center;
     padding: 1rem;
 }
-
 
 
 /* ========== 1) PC +1200px (desktop completo) ========== */
@@ -306,4 +316,17 @@ footer {
     height: 2.5rem;
     font-size: 1rem;
   }
+}
+
+
+@font-face {
+    font-family: 'Titulo'; 
+    src: url('../assets/fonts/Dreamline2.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes aparecer {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }

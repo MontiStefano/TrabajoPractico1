@@ -1,6 +1,5 @@
 const btnIniciar = document.querySelector('.btn_iniciar');
 const btnRegistro = document.querySelector('.btn_registro');
-
 const contenedor = document.querySelector('.contenedor');
 
 btnRegistro.addEventListener('click', () => {
@@ -14,108 +13,42 @@ btnIniciar.addEventListener('click', () => {
 //validar inicio sesion
 const miFormulario = document.getElementById("formularioInicio");
 
-miFormulario.addEventListener("submit", function (e) {
-    e.preventDefault();
-    console.log("enviado");
+const formularioInicio = document.getElementById("formularioInicio");
 
-    const bandera = validarFormulario()
-
-    if (bandera) {
-        alert("Enviado con éxito");
-    } else {
-        alert("Datos erróneos");
-    }
-
+formularioInicio.addEventListener("submit", function (e) {
+  e.preventDefault();
+  if (validarLogin()) {
+    alert("Sesión iniciada con éxito");
+  } else {
+    alert("Datos erróneos");
+  }
 });
 
-function validarFormulario() {
-    const usuario = validarUsuario()
-    const contrasenia = validarContraseña()
+function validarLogin() {
+  const usuario = document.getElementById("userInicio").value.trim();
+  const contrasenia = document.getElementById("passInicio").value.trim();
 
-    if (usuario && contrasenia) {
-        return true;
-    } else {
-        return false;
-    }
+  return usuario !== "" && contrasenia !== "";
 }
 
-function validarUsuario() {
-    const usuario = document.getElementById("userInicio").value.trim();
+//validar registro
 
-    if (usuario == "") {
-        return false
-    }
+const formularioRegistro = document.getElementById("formularioRegistro");
 
-    return true;
-}
-
-function validarContraseña() {
-    const contrasenia = document.getElementById("passInicio").value.trim();
-
-    if (contrasenia == "") {
-        return false
-    }
-
-    return true;
-
-}
-//registro
-const miFormularioRegistro = document.getElementById("formularioRegistro");
-
-miFormularioRegistro.addEventListener("submit", function (e) {
-    e.preventDefault();
-    console.log("enviado");
-
-    const bandera = validarFormulario()
-
-    if (bandera) {
-        alert("Enviado con éxito");
-    } else {
-        alert("Datos erróneos");
-    }
-
+formularioRegistro.addEventListener("submit", function (e) {
+  e.preventDefault();
+  if (validarRegistro()) {
+    alert("Registrado con éxito");
+  } else {
+    alert("Datos erróneos");
+  }
 });
 
-function validarFormulario() {
-    const usuario = validarUsuario()
-    const mail = validarEmail()
-    const contrasenia = validarContraseña()
+function validarRegistro() {
+  const usuario = document.getElementById("userRegistro").value.trim();
+  const email = document.getElementById("emailRegistro").value.trim();
+  const contrasenia = document.getElementById("passRegistro").value.trim();
+  const terminos = document.getElementById("terminos").checked;
 
-
-    if (usuario && contrasenia && mail) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function validarUsuario() {
-    const usuario = document.getElementById("userRegistro").value.trim();
-
-    if (usuario == "") {
-        return false
-    }
-
-    return true;
-}
-
-function validarEmail() {
-    const usuario = document.getElementById("emailRegistro").value.trim();
-
-    if (usuario == "") {
-        return false
-    }
-
-    return true;
-}
-
-function validarContraseña() {
-    const contrasenia = document.getElementById("passRegistro").value.trim();
-
-    if (contrasenia == "") {
-        return false
-    }
-
-    return true;
-
+  return usuario !== "" && email !== "" && contrasenia !== "" && terminos ;
 }

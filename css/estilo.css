@@ -1,18 +1,16 @@
 :root{
-    --color1: #0D0F36;
-    --color2: #294380 ;
-    --color3: #69d2cd ;
-    --color4: #b9f1d6 ;
-    --color5: #f1f6ce ;
-    }
-
+    --color1: #F5F5F5;
+    --color2: #E76F51; 
+    --color3: #2D3142; 
+    --color4: #4F5D75; 
+    --color5: #FFFFFF; 
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 /* para el cuerpo de la pagina */
 body {
@@ -21,8 +19,8 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: var(--color1);
 }
-
 
 /* para el titulo */
 header {
@@ -30,7 +28,7 @@ header {
     justify-content: left;
     align-items: center;
     gap: 10px;
-    background: var(--color2);
+    background: var(--color3);
     padding: 2rem 10%;
 }
 
@@ -51,6 +49,8 @@ header .titulo{
     animation: aparecer 1s ease forwards;
 }
 
+
+
 /* para la barra de navegacion */
 nav {
     display: flex;
@@ -59,7 +59,7 @@ nav {
 }
 
 nav a{
-    background-color: var(--color2);
+    background-color: var(--color3);
     color: #fff;
     flex: 1;
     text-align: center;
@@ -73,54 +73,50 @@ nav a{
 }
 
 nav a:hover {
-    background-color: #485e92;
+    background-color: var(--color2);
 }
 
 .container {
     flex: 1;
     display: flex;
-    /* Hacemos flexible el contenedor (.container) */
     flex-direction: row;
-    /* En pantallas grandes: aside izquierda y main derecha */
 }
 
 /* para el menu de la izquierda */
 aside {
-    background: var(--color3);
+    background: var(--color4);
     padding: 1rem;
     width: 250px;
-    /* ancho fijo */
     flex-shrink: 0;
-    /* Para que no se achique */
     margin: 1rem;
     border-radius: 1rem;
     animation: aparecer 1s ease forwards;
+    color: white;
 }
 
 aside a{
-    color: black;
+    color: white;
     text-decoration: none;
     padding-left: 2rem;
     font-size: 1.2rem;
 }
 
 aside a:hover{
-    color: var(--color1);
+    color: var(--color2);
 }
 
 main {
     flex: 1;
-    background: white;
+    background: var(--color1);
 }
 
 .contenido{
     padding: 1rem;
-    
 }
 
 #contenedor-productos{
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales*/
+    grid-template-columns: repeat(2, 1fr); 
     gap: 1rem;
 }
 
@@ -134,9 +130,10 @@ main {
 }
 
 .producto:hover {
-    background: #b2b694;
+    background: var(--color2);
+    color: white;
     animation: agrandar 0.5s forwards;
-  }
+}
 
 .producto .imagen{
     flex: 1;
@@ -149,15 +146,12 @@ main {
 
 /* para el pie de pagina */
 footer {
-    background: var(--color1);
-    /* fondo */
+    background: var(--color3);
     color: white;
-    /* color */
     text-align: center;
-    /* centramos el texto */
     padding: 1rem;
-    /* agregamos margen interno (padding) */
 }
+
 
 
 
