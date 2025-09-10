@@ -24,13 +24,13 @@ formularioInicio.addEventListener("submit", async function (e) {
   const usuarios = await response.json();
 
 
-    if(usuarios.length > 0 && usuarios[0].contra === contra){     // si hay un usuario y la contraseña ingresada coincide
-      alert("Usuario logeado con exito")
-      window.location.href = `../index.html`;
-    }else{
-      alert("Usuario o contraseña incorrectos")
-    }
-  });
+  if(usuarios.length > 0 && usuarios[0].contra === contra){     // si hay un usuario y la contraseña ingresada coincide
+    alert("Usuario logeado con exito")
+    window.location.href = `../index.html`;
+  }else{
+    alert("Usuario o contraseña incorrectos")
+  }
+});
 
 
 function validarLogin(usuario, contra) {
@@ -103,7 +103,9 @@ async function usuarioExistente(usuario){
   }
 }
 
+
 //modo oscuro/claro
+
 const boton_modo = document.getElementById("boton_modo");
 const body = document.body;
 
@@ -127,3 +129,5 @@ boton_modo.addEventListener("click", () => {
         localStorage.setItem("modo", "claro");
     }
 });
+
+
