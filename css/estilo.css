@@ -60,21 +60,13 @@ header .titulo {
 }
 
 .contenedor_boton {
-    height: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    margin-left: auto;
+    flex: 1;
 }
 
 #boton_modo {
     height: 60px;
     width: 60px;
     font-size: 1.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #4F5D75;
     border-radius: 100%;
 }
