@@ -1,13 +1,13 @@
-:root{
+:root {
     --color1: #F5F5F5;
-    --color2: #E76F51; 
-    --color3: #2D3142; 
-    --color4: #4F5D75; 
-    --color5: #FFFFFF; 
+    --color2: #E76F51;
+    --color3: #485e92;
+    --color4: #4F5D75;
+    --color5: #FFFFFF;
 }
 
 body.oscuro {
-  --color1: #4F5D75;
+  --color1: #455164;
   --color2: #E76F51; 
   --color3: #2D3142;
   --color4: #2D3142;
@@ -144,7 +144,6 @@ aside a:hover{
 
 main {
     flex: 1;
-    background: white;
 }
 
 .contenido{
@@ -178,7 +177,7 @@ main {
 }
 
 .producto:hover {
-    border-bottom: 1px solid #2D3142;
+    border-bottom: 1px solid var(--color2);
 }
 
 .producto .imagen{
@@ -207,7 +206,27 @@ main {
 .producto .opciones .btnEliminar{
     grid-column: span 2 / span 2;
     grid-row-start: 2;
+    height: 2.2rem;
+    border-radius: 7px;
+    color: white;
+    background-color: var(--color2);
+    border: none;
+    cursor: pointer;
+    transition: 0.3 ease;
+}
+
+.producto .opciones .btnEliminar:hover{
+    background-color: #e65b2a;
+}
+
+.producto .opciones .cantidad{
+    width: 3rem; 
     height: 2rem;
+    background-color: var(--color2);
+    color: white;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 3px;
 }
 
 /* para el pie de pagina */

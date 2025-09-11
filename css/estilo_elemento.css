@@ -162,7 +162,7 @@ article {
     transition: 0.3s ease;
 }
 
-button:hover {
+.botonElemento:hover {
     background-color: #e65b2a; /* naranja más oscuro */
 }
 

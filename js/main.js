@@ -45,12 +45,8 @@ async function cargarProductos() {
 document.addEventListener("DOMContentLoaded", cargarProductos);  // Ejecutar la función pero cuando la página cargue (por las dudas)}
 
 
-<<<<<<< HEAD
-// boton modo
-=======
 // boton modo claro/oscuro
 
->>>>>>> e11b776a2a232c43ec0f403ccc8b3377698df800
 const boton_modo = document.getElementById("boton_modo");
 const body = document.body;
 
