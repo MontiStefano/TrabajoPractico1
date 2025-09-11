@@ -180,8 +180,8 @@ main {
 }
 
 .producto .imagen .miniatura {
-    width: 64px;
-    height: 64px;
+    width: 128px;
+    height: 128px;
     border: 1px solid var(--color4);
     border-radius: 5px;
 }

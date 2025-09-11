@@ -14,6 +14,7 @@ body.oscuro {
   --color5: #4F5D75; 
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -266,3 +267,4 @@ footer {
         opacity: 1;
     }
 }
+
