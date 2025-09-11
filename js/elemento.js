@@ -16,7 +16,7 @@ async function cargarProductoEspecifico() {
         div.innerHTML = 
         `<div class="completo">
             <div class="contenedor_imagen">
-                <img src="../assets/images/${productos.imagen1}" alt="Auriculares" class="imagenPrincipal" id="imagen">
+                <img src="../assets/images/zapatillas/${productos.imagen}" alt="Auriculares" class="imagenPrincipal" id="imagen">
             </div>
 
             <div class="contenedor_texto">
@@ -51,7 +51,16 @@ async function cargarProductoEspecifico() {
                 <div>
 
                     <h3 class="descripcion">Descripción del producto:</h3> 
-                    <p class="descripcion_parrafo">${productos.descripcionDetallada}</p>
+                    <p class="descripcion_parrafo">${productos.descripcionDetallada}</p> <br>
+                    <h3 class="descripcion">Características:</h3>
+                    <p class="descripcion_parrafo">
+                        •Talle: ${productos.talle} <br> 
+                        •Color: ${productos.color} <br>
+                        •Peso: ${productos.peso} <br>
+                        •Marca: ${productos.marca} <br>
+                        •Tipo: ${productos.tipo} 
+
+                    </p>
                 </div>
             </div>
         </div>`;

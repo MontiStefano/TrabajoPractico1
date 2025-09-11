@@ -1,27 +1,132 @@
-
-
-
-[
-  {
-    "codigo": 1,
-    "nombre": "Notebook Gamer",
-    "precio": 1200.50,
-    "imagen": "img/notebook.jpg",
-    "descripcion": "Notebook gamer con procesador Intel i7 y 16GB RAM."
-  },
-  {
-    "codigo": 2,
-    "nombre": "Mouse Inalambrico",
-    "precio": 25.99,
-    "imagen": "img/mouse.jpg",
-    "descripcion": "Mouse inalámbrico ergonómico con batería recargable."
-  },
-  {
-    "codigo": 3,
-    "nombre": "Auriculares Bluetooth",
-    "precio": 59.90,
-    "imagen": "img/auriculares.jpg",
-    "descripcion": "Auriculares Bluetooth con cancelación de ruido."
-  }
-]
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Adidas Runfalcon",
+      "precio": 89.999,
+      "imagen": "../TrabajoPractico1/assets/images/zapatillas/z1.png",
+      "descripcion": "Zapatillas Adidas Deportivas",
+      "calificacion": "&#9733; &#9733; &#9733; &#9733; &#9734;",
+      "descripcionDetallada": "Estas versátiles zapatillas de running adidas son perfectas para correr en el parque y después tomar un café con tus amigos. Su mediasuela Cloudfoam te ofrece una pisada cómoda desde el momento en que te las ponés. Presentan un exterior textil cómodo y transpirable con una suela de caucho que proporciona un excelente agarre.",
+      "talle": "41",
+      "color": "Negro",
+      "peso": "240 gr",
+      "marca": "Adidas",
+      "tipo": "Deportivo"
+    },
+    {
+      "id": "2",
+      "nombre": "Nike Air Force 1",
+      "precio": 199.999,
+      "imagen": "z2.png",
+      "descripcion": "Zapatillas Nike Urbanas",
+      "calificacion": "&#9733; &#9733; &#9733; &#9733; &#9733;",
+      "descripcionDetallada": "El fulgor vive en el Nike Air Force 1 07, el OG de básquetbol que le da un toque fresco a lo que mejor conoces: revestimientos con costuras duraderas, acabados impecables y la cantidad perfecta de destellos para que brilles.",
+      "talle": "42",
+      "color": "Blanco",
+      "peso": "320 gr",
+      "marca": "Nike",
+      "tipo": "Urbano"
+    },
+    {
+      "id": "3",
+      "nombre": "Nike Air Max",
+      "precio": 169.999,
+      "imagen": "z3.png",
+      "descripcion": "Zapatillas Nike Urbanas",
+      "calificacion": "&#9733; &#9733; &#9733; &#9734; &#9734;",
+      "descripcionDetallada": "Con sus líneas simples, el look de atletismo tradicional y, por supuesto, la amortiguación Air visible, el Nike Air Max SC es el toque final perfecto para cualquier atuendo. La mezcla rica de materiales agrega profundidad, a la vez que lo convierte en un calzado duradero y ligero para el día a día.",
+      "talle": "42",
+      "color": "Negro",
+      "peso": "300 gr",
+      "marca": "Nike",
+      "tipo": "Urbano"
+    },
+    {
+      "id": "4",
+      "nombre": "Adidas Samba",
+      "precio": 89.999,
+      "imagen": "z4.png",
+      "descripcion": "Zapatillas Adidas Casual",
+      "calificacion": "&#9733; &#9733; &#9733; &#9734; &#9734;",
+      "descripcionDetallada": "Ya sea que quieras lucir estilo formal con un pantalón a medida o uno más casual con joggers, estas zapatillas adidas complementan cualquier look. La parte superior suave trae un forro interno para una sensación de máxima suavidad con cada paso. La suela de caucho ofrece estabilidad a tus pasos en todo momento.",
+      "talle": "39",
+      "color": "Blanco",
+      "peso": "280 gr",
+      "marca": "Adidas",
+      "tipo": "Casuales"
+    },
+    {
+      "id": "5",
+      "nombre": "Puma Suede XL",
+      "precio": 179.999,
+      "imagen": "z5.png",
+      "descripcion": "Zapatillas Puma Urbanas",
+      "calificacion": "&#9733; &#9733; &#9733; &#9733; &#9733;",
+      "descripcionDetallada": "Un clásico renovado que combina estilo urbano y comodidad para todos los días. Con su diseño retro y materiales de primera calidad, son el par ideal para completar cualquier outfit.",
+      "talle": "43",
+      "color": "Negro y Blanco",
+      "peso": "340 gr",
+      "marca": "Puma",
+      "tipo": "Urbanas"
+    },
+    {
+      "id": "6",
+      "nombre": "Nike Pegasus",
+      "precio": 152.949,
+      "imagen": "z6.png",
+      "descripcion": "Zapatillas Nike Deportivas",
+      "calificacion": "&#9733; &#9733; &#9733; &#9733; &#9733;",
+      "descripcionDetallada": "Con una pisada elástica para cada tipo de carrera, vuelve la sensación familiar e ideal para ti que ofrece el Peg para ayudarte a alcanzar tus objetivos. Esta versión cuenta con la misma capacidad de respuesta inmediata y soporte neutro que te encanta, pero con comodidad mejorada en las zonas sensibles del pie, como el arco y los dedos.",
+      "talle": "40",
+      "color": "Negro y Blanco",
+      "peso": "210 gr",
+      "marca": "Nike",
+      "tipo": "Running"
+    }, 
+    {
+      "id": "7",
+      "nombre": "Vans KNU",
+      "precio": 89.550,
+      "imagen": "z7.png",
+      "descripcion": "Zapatillas Vans Estilo Urbano",
+      "calificacion": "&#9733; &#9733; &#9733; &#9733; &#9734;",
+      "descripcionDetallada": "Inspiradas en el estilo skate de los 90, estas zapatillas se destacan por su silueta robusta y diseño único. Perfectas para quienes buscan un look auténtico y diferente sin perder comodidad.",
+      "talle": "38",
+      "color": "Negro y Blanco",
+      "peso": "295 gr",
+      "marca": "Vans",
+      "tipo": "Urbano"
+    },
+    {
+      "id": "8",
+      "nombre": "Adidas Campus Bad Bunny",
+      "precio": 190.000,
+      "imagen": "z8.png",
+      "descripcion": "Zapatillas Adidas Campus",
+      "calificacion": "&#9733; &#9733; &#9733; &#9733; &#9733;",
+      "descripcionDetallada": "La colaboración más esperada entre adidas y Bad Bunny llega con un diseño único que combina estilo urbano y materiales de calidad premium. Un modelo exclusivo que redefine la clásica silueta Campus con detalles que marcan tendencia.",
+      "talle": "40",
+      "color": "Gris",
+      "peso": "350 gr",
+      "marca": "Adidas",
+      "tipo": "Casual"
+    },
+    {
+      "id": "10",
+      "nombre": "Nike Revolution",
+      "precio": 99.000,
+      "imagen": "z10.png",
+      "descripcion": "Zapatillas Nike Revolution",
+      "calificacion": "&#9733; &#9733; &#9733; &#9734; &#9734;",
+      "descripcionDetallada": "Elegantes como siempre, cómodos cuando la goma se encuentra con la carretera y con alto rendimiento para el ritmo deseado, son una evolución de un favorito de los fanáticos que ofrece un andar suave y terso Pisada con espuma.",
+      "talle": "37",
+      "color": "Verde",
+      "peso": "230 gr",
+      "marca": "Nike",
+      "tipo": "Deportivo"
+    }
+    
+  ]
+}
 
