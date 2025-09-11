@@ -148,7 +148,7 @@ article {
     align-items: center;
 }
 
-button {
+.botonElemento {
     border-radius: 7px;
     background-color: var(--color2);
     color: white;
@@ -164,6 +164,15 @@ button {
 
 button:hover {
     background-color: #e65b2a; /* naranja más oscuro */
+}
+
+.cantidad{
+  border-radius: 7px;
+  height: 2.2rem;
+  width: 2rem;
+  background-color: var(--color2);
+  color: white;
+  justify-content: center;
 }
 
 .contenedor_medios {

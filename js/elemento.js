@@ -30,8 +30,9 @@ async function cargarProductoEspecifico() {
                     <p class="envio">Envio Gratis. <br> Llega en 8 dias.</p>
                 </div>
                 <div class="contenedor_botones">
-                    <button class="boton_comprar">Comprar Ahora</button>
-                    <button class="boton_carrito">Agregar al Carrito</button>
+                    <button class="botonElemento" id="boton_comprar">Comprar Ahora</button>
+                    <button class="botonElemento" id="boton_carrito">Agregar al Carrito</button>
+                    <input type="number" name="" class="cantidad" step="1">
                 </div>
                 <div class="contenedor_medios">
                     <h3>Medios de Pago:</h3>
@@ -64,3 +65,58 @@ async function cargarProductoEspecifico() {
 }
 
 document.addEventListener("DOMContentLoaded", cargarProductoEspecifico);
+
+
+const btnComprar = document.getElementById('boton_comprar');
+const btnCarrito = document.getElementById('boton_carrito');
+const cantidad = document.querySelector('.cantidad');
+
+
+
+
+btnCarrito.addEventListener('click', () => {
+    
+    const carrito_guardado = localStorage.getItem("carrito");
+
+    const infoUrl = new URLSearchParams(window.location.search); // toma TODOS los parametros de la URL generada
+    const id_producto = infoUrl.get("id");
+    const cantidad = document.querySelector('cantidad').value;
+
+    
+
+    if(carrito_guardado === ""){
+        fetch("http://localhost:3000/usuarios", {                   // fetch a usuarios
+      method: "POST",                                           // metodo POST para enviar el formulario a la db.json
+      headers: { "Content-Type": "application/json" },          // indica que es formato JSON
+      body: JSON.stringify({ id_producto, cantidad })         // contenido del JSON
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log("Carrito cargado", data);           // muestra en la consola la informacion del usuario registrado
+      alert("Registrado con exito!");                     // muestra un mensaje al usuario
+      contenedor.classList.remove('activo');              // vuelve a la parte de incio de sesion
+    })
+    }else{
+        localStorage.setItem("carrito", "ocupado");
+
+
+
+
+        fetch("http://localhost:3000/usuarios/1")
+        .then(res => res.json())
+        .then(usuario => {
+            const nuevosHobbies = [];
+
+            return fetch("http://localhost:3000/usuarios/1", {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ hobbies: nuevosHobbies })
+            });
+        })
+        .then(res => res.json())
+        .then(data => console.log("Actualizado:", data));
+    }
+
+
+});
+

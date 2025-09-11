@@ -54,7 +54,7 @@ formularioRegistro.addEventListener("submit", async function (e) {
   const email = document.getElementById("emailRegistro").value.trim();
   const contra = document.getElementById("passRegistro").value.trim();
 
-  if (validarRegistro(usuario, email, contra) && await usuarioExistente(usuario)) {    // si el formulario es valido y si no hay un usuario ya existente  
+  if (validarRegistro(usuario, email, contra) && await usuarioExistente(usuario) && await emailExistente(email)) {    // si el formulario es valido y si no hay un usuario ya existente  
 
     fetch("http://localhost:3000/usuarios", {                   // fetch a usuarios
       method: "POST",                                           // metodo POST para enviar el formulario a la db.json
@@ -103,6 +103,18 @@ async function usuarioExistente(usuario){
   }
 }
 
+async function emailExistente(email){
+  const response = await fetch(`http://localhost:3000/usuarios?email=${email}`);
+  const emails = await response.json();
+  
+  if (emails.length > 0) {
+    // Ya existe un usuario con ese email
+    alert("Ya hay un usuario con el mismo email");
+    return false;
+  } else {
+    return true;
+  }
+}
 
 //modo oscuro/claro
 
