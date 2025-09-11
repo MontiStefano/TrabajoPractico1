@@ -5,15 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trabajo Practico 1</title>
+<<<<<<< HEAD
   <link rel="icon" type="image/x-icon" href="../assets/images/favicon_multi_48.ico">
   <link rel="stylesheet" href="../css/estilo.css">
+=======
+  <link rel="stylesheet" href="../css/estilo_carrito.css">
+>>>>>>> e11b776a2a232c43ec0f403ccc8b3377698df800
 </head>
 
 
 <body>
   <header>
-      <div style="align-items: center;"><img src="../assets/images/logo.png" alt="" class="logo"></div>
-      <div class="titulo"><h1>Urban Kicks</h1></div>
+    <div style="align-items: center;"><img src="../assets/images/logo.png" alt="" class="logo"></div>
+    <div class="titulo">
+      <h1>Urban Kicks</h1>
+    </div>
+    <div class="contenedor_boton">
+      <button id="boton_modo">🌙</button>
+    </div>
   </header>
 
   <nav>
@@ -22,7 +31,7 @@
     <a href="iniciar_sesion.html">INICIAR SESION</a>
     <a href="sobre_nosotros.html">SOBRE NOSOTROS</a>
   </nav>
-    
+
   <div class="container">
     <aside>
 
@@ -38,9 +47,37 @@
     </aside>
 
     <main>
-      <div class="contenido">
 
+<<<<<<< HEAD
         <P>CONTENIDO</P>
+=======
+      <div class="contenido">
+        <h2 class="tituloContenido">CARRITO DE COMPRAS:</h2>
+
+        <div id="contenedor-productos">
+
+          <div class="producto">
+            <div class="imagen">
+              <img src="../assets/images/notebook.jpg" alt="" style="width: 64px; height: 64px;">
+            </div>
+            <div class="texto">
+              <h3 class="nombre">Nombre del Producto</h3>
+              <h4 class="precio">$999.99</h4>
+              <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit a quos officiis optio
+                voluptatibus architecto.</p>
+              <p class="calificacion"> &#9733; &#9733; &#9733; &#9733; &#9734; </p>
+            </div>
+              
+            <div class="opciones">
+              <label for="" style="align-content: center;">Cantidad:</label>
+              <input type="number" name="" class="cantidad" step="1" style="width: 3rem; height: 2rem;">
+              <button type="submit" class="btnEliminar">Eliminar</button>
+            </div>
+
+          </div>
+
+        </div>
+>>>>>>> e11b776a2a232c43ec0f403ccc8b3377698df800
 
       </div>
 
@@ -57,6 +94,33 @@
   </footer>
 
 
+  <script>
+    //modo oscuro/claro
+    const boton_modo = document.getElementById("boton_modo");
+    const body = document.body;
+
+    const modo_guardado = localStorage.getItem("modo"); //revisa que modo hay guardado
+
+    if (modo_guardado === "oscuro") {
+      body.classList.add("oscuro");
+      boton_modo.textContent = "☀️";
+    } else {
+      boton_modo.textContent = "🌙";
+    }
+
+    boton_modo.addEventListener("click", () => {
+        body.classList.toggle("oscuro");
+
+        if (body.classList.contains("oscuro")) {
+            boton_modo.textContent = "☀️";
+            localStorage.setItem("modo", "oscuro");
+        } else {
+            boton_modo.textContent = "🌙"
+            localStorage.setItem("modo", "claro");
+        }
+    });
+
+  </script>
 </body>
 
 </html>
