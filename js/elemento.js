@@ -82,7 +82,7 @@ const cantidad = document.querySelector('.cantidad');
 
 
 
-
+/*
 btnCarrito.addEventListener('click', () => {
     
     const carrito_guardado = localStorage.getItem("carrito");
@@ -129,3 +129,30 @@ btnCarrito.addEventListener('click', () => {
 
 });
 
+*/
+
+// boton modo claro/oscuro
+
+const boton_modo = document.getElementById("boton_modo");
+const body = document.body;
+
+const modo_guardado = localStorage.getItem("modo"); //revisa que modo hay guardado
+
+if (modo_guardado === "oscuro") {
+  body.classList.add("oscuro");
+  boton_modo.textContent = "☀️";
+} else {
+  boton_modo.textContent = "🌙";
+}
+
+boton_modo.addEventListener("click", () => {
+    body.classList.toggle("oscuro");
+
+    if (body.classList.contains("oscuro")) {
+        boton_modo.textContent = "☀️";
+        localStorage.setItem("modo", "oscuro");
+    } else {
+        boton_modo.textContent = "🌙"
+        localStorage.setItem("modo", "claro");
+    }
+});

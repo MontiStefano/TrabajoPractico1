@@ -6,9 +6,29 @@
     --color5: #FFFFFF;
 }
 
+
+body.oscuro {
+  --color1: #4F5D75;
+  --color2: #E76F51; 
+  --color3: #2D3142;
+  --color4: #2D3142;
+  --color5: #4F5D75; 
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #111;
 }
 
 header {
@@ -35,6 +55,23 @@ header .titulo{
     font-family: 'Titulo', Arial, Helvetica, sans-serif;
     opacity: 0;
     animation: aparecer 1s ease forwards;
+    width: 100%;
+}
+
+.contenedor_boton {
+    flex: 1;
+}
+
+#boton_modo {
+    height: 60px;
+    width: 60px;
+    font-size: 1.8rem;
+    background-color: #4F5D75;
+    border-radius: 100%;
+}
+
+#boton_modo:hover {
+    cursor: pointer;
 }
 
 
@@ -61,12 +98,17 @@ nav a:hover {
     background-color: var(--color2);
 }
 
+
+/* ------------------------  CSS ELEMENTO  ------------------------ */
+
+
 /* seccion foto y info del articulo */
 article {
     display: flex;
     justify-content: center;
     background-color: var(--color1);
 }
+
 
 .completo {
     display: flex;
@@ -213,7 +255,7 @@ footer {
 }
 
 
-/* ========== 1) PC +1200px (desktop completo) ========== */
+/* ==========  PC  ========== */
 @media (min-width: 1200px) {
   .completo {
     flex-direction: row;
@@ -231,7 +273,7 @@ footer {
   }
 }
 
-/* ========== 2) Laptop (992px - 1199px) ========== */
+/* ========== Laptop  ========== */
 @media (max-width: 1199px){
   .completo {
     flex-direction: row;
@@ -248,7 +290,7 @@ footer {
   }
 }
 
-/* ========== 3) Tablet (768px - 991px) ========== */
+/* ==========  Tablet  ========== */
 @media (max-width: 992px) {
 
   .completo {
@@ -284,7 +326,7 @@ footer {
   
 }
 
-/* ========== 4) Celular (<480px) ========== */
+/* ========== Celular ========== */
 @media (max-width: 480px) {
   header {
     font-size: 2rem;
