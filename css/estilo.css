@@ -75,6 +75,29 @@ header .titulo {
     cursor: pointer;
 }
 
+.contenedorUsuario{
+    display: flex;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.contenedorUsuario #usuario{
+    padding: 1rem;
+}
+
+.contenedorUsuario #boton_cerrar{
+    height: 60px;
+    width: 60px;
+    font-size: 1.8rem;
+    background-color: #4F5D75;
+    border-radius: 100%;
+    display: none;
+}
+
+#boton_cerrar:hover {
+    cursor: pointer;
+}
+
 /* para la barra de navegacion */
 nav {
     display: flex;

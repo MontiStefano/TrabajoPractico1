@@ -45,6 +45,30 @@ async function cargarProductos() {
 document.addEventListener("DOMContentLoaded", cargarProductos);  // Ejecutar la función pero cuando la página cargue (por las dudas)}
 
 
+function cargarUsuario(){
+    if(localStorage.getItem("usuarioLog")){
+        const usuario = JSON.parse(localStorage.getItem("usuarioLog"));
+        document.getElementById("usuario").textContent = usuario.usuario
+        console.log("el usuario es:" + usuario.usuario)
+        document.getElementById("boton_cerrar").style.display = "block"
+    }
+}
+
+cargarUsuario();
+
+
+
+// boton cerrar sesion
+
+boton_cerrar.addEventListener("click", () => {
+    localStorage.removeItem("usuarioLog");
+    sessionStorage.removeItem("usuarioLog");
+    location.reload();
+})
+
+
+
+
 // boton modo claro/oscuro
 
 const boton_modo = document.getElementById("boton_modo");
