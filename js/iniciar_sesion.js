@@ -43,26 +43,41 @@ formularioInicio.addEventListener("submit", async function (e) {
   const contra = document.getElementById("passInicio").value.trim();
   const recordar = document.getElementById("guardarSesion");
 
-  const response = await fetch(`http://localhost:3000/usuarios?usuario=${usuario}`);     // fetch a usuarios donde el usuario es el mismo que se ingreso
+  const response = await fetch(`http://localhost:3000/usuarios?usuario=${usuario}`);         // fetch a usuarios donde el usuario es el mismo que se ingreso
   const usuarios = await response.json();                                               // lo almacena en usuarios
+
 
   
 
   if(validarLogin(usuario, contra, usuarios)){     // si hay un usuario y la contraseña ingresada coincide
+    
     const usuarioValido = usuarios[0];
-    console.log(usuarioValido);
+    const idUsuario = usuarioValido.id;
+
+    const resCarrito = await fetch(`http://localhost:3000/carritos?id_usuario=${idUsuario}`);
+    const carritos = await resCarrito.json();
+    const carritoValido = carritos[0];
+
+
+    console.log("Usuario valido: " + usuarioValido);
+    console.log("Usuario valido: " + carritoValido);
+
 
     if(recordar.checked){                                                                            // si "recuerdame" esta marcado:
-      localStorage.setItem("usuarioLog", JSON.stringify(usuarioValido));                                                  // guarda el usuario logeado en el LOCAL storage
-      console.log(localStorage.getItem("usuarioLog") + "Guardado en local storage")                // muestra en consola
+      localStorage.setItem("usuarioLog", JSON.stringify(usuarioValido));                            // guarda el usuario logeado en el LOCAL storage
+      localStorage.setItem("carrito", JSON.stringify(carritoValido));
+      console.log(localStorage.getItem("usuarioLog") + " Guardado en local storage")                // muestra en consola
+      console.log(localStorage.getItem("carrito") + " Guardado en local storage")
     }
     else{                                                                                               // sino:
-      sessionStorage.setItem("usuarioLog", JSON.stringify(usuarioValido));                                                   // guarda el usuario logeado en SESION storage
-      console.log(sessionStorage.getItem("usuarioLog") + " guardado en sesion storage")               // muestra en consola
+      sessionStorage.setItem("usuarioLog", JSON.stringify(usuarioValido));                             // guarda el usuario logeado en SESION storage
+      sessionStorage.setItem("carrito", JSON.stringify(carritoValido));
+      console.log(sessionStorage.getItem("usuarioLog") + " Guardado en sesion storage")               // muestra en consola
+      console.log(sessionStorage.getItem("carrito") + " Guardado en local storage")
     }
 
     alert("Usuario logeado con exito")                                         // muestra un mensaje
-    window.location.href = `../index.html?user=${usuario}`;                   // vuelve al inicio
+    //window.location.href = `../index.html?user=${usuario}`;                   // vuelve al inicio
   }
   
 });
