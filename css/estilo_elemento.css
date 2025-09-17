@@ -4,14 +4,15 @@
     --color3: #2D3142;
     --color4: #4F5D75;
     --color5: #FFFFFF;
+    --color6: #485e92;
 }
 
 
 body.oscuro {
-  --color1: #4F5D75;
+  --color1: #F5F5F5;
   --color2: #E76F51; 
   --color3: #2D3142;
-  --color4: #2D3142;
+  --color4: #252836;
   --color5: #4F5D75; 
 }
 
@@ -24,79 +25,13 @@ body.oscuro {
 
 body {
     min-height: 100vh;
-    background-color: var(--color1);
+    background-color: var(--color4);
     display: flex;
     flex-direction: column;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #111;
 }
 
-header {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 10px;
-    background: var(--color3);
-    padding: 2rem 10%;
-}
-
-header .logo{
-    justify-content: center;
-    width: 150px;
-    height: auto;
-    opacity: 0;
-    animation: aparecer 1s ease forwards;
-}
-
-header .titulo{
-    justify-content: center;
-    font-size: 1.5rem;
-    color: white;
-    font-family: 'Titulo', Arial, Helvetica, sans-serif;
-    opacity: 0;
-    animation: aparecer 1s ease forwards;
-    width: 100%;
-}
-
-.contenedor_boton {
-    flex: 1;
-}
-
-#boton_modo {
-    height: 60px;
-    width: 60px;
-    font-size: 1.8rem;
-    background-color: #4F5D75;
-    border-radius: 100%;
-}
-
-#boton_modo:hover {
-    cursor: pointer;
-}
-
-
-nav {
-    display: flex;
-    height: 3rem;
-}
-
-nav a {
-    background-color: var(--color3);
-    color: #fff;
-    flex: 1;
-    text-align: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    text-decoration: none;
-    padding: 1rem;
-}
-
-nav a:hover {
-    background-color: var(--color2);
-}
 
 
 /* ------------------------  CSS ELEMENTO  ------------------------ */
@@ -106,7 +41,7 @@ nav a:hover {
 article {
     display: flex;
     justify-content: center;
-    background-color: var(--color1);
+    background-color: var(--color4);
 }
 
 
@@ -151,6 +86,7 @@ article {
     display: block;
     border-radius: 8px;
     margin: 0 auto;
+    border: #111 1px solid;
 }
 
 .titulo_producto {

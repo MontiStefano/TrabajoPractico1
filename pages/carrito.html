@@ -7,6 +7,7 @@
   <title>Trabajo Practico 1</title>
   <link rel="icon" type="image/x-icon" href="../assets/images/favicon_multi_48.ico">
   <link rel="stylesheet" href="../css/estilo_carrito.css">
+  <link rel="stylesheet" href="../css/estilo_header.css">
 </head>
 
 
@@ -16,6 +17,10 @@
     <div class="titulo">
       <h1>Urban Kicks</h1>
     </div>
+    <div class="contenedorUsuario">
+        <h3 id="usuario"></h3>
+        <button id="boton_cerrar">X</button>
+      </div>
     <div class="contenedor_boton">
       <button id="boton_modo">🌙</button>
     </div>
@@ -86,33 +91,7 @@
   </footer>
 
 
-  <script>
-    //modo oscuro/claro
-    const boton_modo = document.getElementById("boton_modo");
-    const body = document.body;
-
-    const modo_guardado = localStorage.getItem("modo"); //revisa que modo hay guardado
-
-    if (modo_guardado === "oscuro") {
-      body.classList.add("oscuro");
-      boton_modo.textContent = "☀️";
-    } else {
-      boton_modo.textContent = "🌙";
-    }
-
-    boton_modo.addEventListener("click", () => {
-        body.classList.toggle("oscuro");
-
-        if (body.classList.contains("oscuro")) {
-            boton_modo.textContent = "☀️";
-            localStorage.setItem("modo", "oscuro");
-        } else {
-            boton_modo.textContent = "🌙"
-            localStorage.setItem("modo", "claro");
-        }
-    });
-
-  </script>
+  <script src="../js/carrito.js"></script>
 </body>
 
 </html>

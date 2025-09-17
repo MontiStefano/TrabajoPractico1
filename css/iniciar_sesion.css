@@ -42,48 +42,6 @@ header {
     width: 100%;
 }
 
-header .logo {
-    justify-content: center;
-    width: 150px;
-    height: auto;
-    opacity: 0;
-    animation: aparecer 1s ease forwards;
-}
-
-header .titulo {
-    justify-content: left;
-    font-size: 1.4rem;
-    color: white;
-    font-family: 'Titulo', Arial, Helvetica, sans-serif;
-    opacity: 0;
-    animation: aparecer 1s ease forwards;
-    width: 100%;
-}
-
-
-.contenedor_boton {
-    height: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    margin-left: auto;
-}
-
-#boton_modo {
-    height: 60px;
-    width: 60px;
-    font-size: 1.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #4F5D75;
-    border-radius: 100%;
-}
-
-#boton_modo:hover {
-    cursor: pointer;
-}
 
 nav {
   display: flex;
@@ -91,18 +49,6 @@ nav {
   width: 100%;
 }
 
-nav a {
-  background-color: var(--color3);
-  color: #fff;
-  flex: 1;
-  text-align: center;
-  text-decoration: none;
-  padding: 1rem;
-}
-
-nav a:hover {
-  background-color: var(--color2);
-}
 
 
 

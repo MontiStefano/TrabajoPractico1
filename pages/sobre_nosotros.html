@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/sobre_nosotros.css">
+    <link rel="stylesheet" href="../css/estilo_header.css">
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon_multi_48.ico">
     <title>Sobre Nosotros</title>
 </head>
@@ -15,9 +16,13 @@
         <div class="titulo">
             <h1>Urban Kicks</h1>
         </div>
+        <div class="contenedorUsuario">
+            <h3 id="usuario"></h3>
+            <button id="boton_cerrar">X</button>
+        </div>
         <div class="contenedor_boton">
-        <button id="boton_modo">🌙</button>
-      </div>
+            <button id="boton_modo">🌙</button>
+        </div>
         <script>
             const boton_modo = document.getElementById("boton_modo");
             const body = document.body;
@@ -42,6 +47,25 @@
                     localStorage.setItem("modo", "claro");
                 }
             });
+
+
+            function cargarUsuario() {
+                if (localStorage.getItem("usuarioLog")) {
+                    const usuario = JSON.parse(localStorage.getItem("usuarioLog"));
+                    document.getElementById("usuario").textContent = usuario.usuario
+                    console.log("el usuario es:" + usuario.usuario)
+                    document.getElementById("boton_cerrar").style.display = "block"
+                }
+            }
+
+            cargarUsuario();
+
+
+            boton_cerrar.addEventListener("click", () => {
+                localStorage.removeItem("usuarioLog");
+                sessionStorage.removeItem("usuarioLog");
+                location.reload();
+            })
 
         </script>
     </header>
