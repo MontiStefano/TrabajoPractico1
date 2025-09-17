@@ -19,79 +19,6 @@ body.oscuro {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-header {
-  background: var(--color3);
-  color: white;
-  text-align: center;
-  font-size: 3rem;
-  padding: 2rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  
-}
-
-header h1 {
-  font-family: 'Titulo';
-  font-size: 3rem;
-}
-
-.titulo {
-  width: 90%;
-}
-
-header .logo{
-    justify-content: center;
-    width: 150px;
-    height: auto;
-    margin-left: 10%;
-}
-.contenedor_boton {
-    height: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-
-
-}
-
-#boton_modo {
-    height: 60px;
-    width: 60px;
-    font-size: 1.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #4F5D75;
-    border-radius: 100%;
-}
-
-#boton_modo:hover {
-    cursor: pointer;
-}
-
-nav {
-  display: flex;
-  height: 3rem;
-  width: 100%;
-}
-
-nav a {
-  background-color: var(--color3);
-  color: #fff;
-  flex: 1;
-  text-align: center;
-  text-decoration: none;
-  padding: 1rem;
-}
-
-nav a:hover {
-  background-color: var(--color2);
 }
 
 body {
@@ -224,10 +151,31 @@ footer {
   }
 }
 
-
 @font-face {
-    font-family: 'Titulo'; 
-    src: url('../assets/fonts/Dreamline2.otf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Titulo';
+  src: url('../assets/fonts/Dreamline2.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes aparecer {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes aparecer_nav {
+    from {
+        transform: translateY(-20px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
