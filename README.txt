@@ -42,10 +42,11 @@ TrabajoPractico1
 ┃ ┣ estilo_carrito.css
 ┃ ┣ estilo_elemento.css
 ┃ ┣ estilo_header.css
-┃ ┣ estilo.css
-┃ ┣ iniciar_sesion.css
+┃ ┣ estilo_inicio.css
+┃ ┣ estilo_iniciar_sesion.css
 ┃ ┗ sobre_nosotros.css
 ┣ js
+┃ ┣ general.js
 ┃ ┣ carrito.js
 ┃ ┣ elemento.js
 ┃ ┣ iniciar_sesion.js
