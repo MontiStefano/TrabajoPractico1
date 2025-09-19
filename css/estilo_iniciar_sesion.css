@@ -49,9 +49,6 @@ nav {
   width: 100%;
 }
 
-
-
-
 .contenedor {
   position: relative;
   width: 400px;
@@ -190,14 +187,7 @@ button:hover {
   color: var(--color4);
 }
 
-footer {
-  background: var(--color3);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
-  width: 100%;
-}
+
 
 
 @font-face {

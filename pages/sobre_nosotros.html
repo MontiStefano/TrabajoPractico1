@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/sobre_nosotros.css">
     <link rel="stylesheet" href="../css/estilo_header.css">
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon_multi_48.ico">
-    <title>Sobre Nosotros</title>
+    <title>Urban Kicks - Sobre Nosotros</title>
 </head>
 
 <body>
@@ -18,56 +18,11 @@
         </div>
         <div class="contenedorUsuario">
             <h3 id="usuario"></h3>
-            <button id="boton_cerrar">X</button>
+            <button id="boton_cerrar" title="Cerrar Sesion">X</button>
         </div>
         <div class="contenedor_boton">
-            <button id="boton_modo">🌙</button>
+            <button id="boton_modo" title="Modo Oscuro">🌙</button>
         </div>
-        <script>
-            const boton_modo = document.getElementById("boton_modo");
-            const body = document.body;
-
-            const modo_guardado = localStorage.getItem("modo"); //revisa que modo hay guardado
-
-            if (modo_guardado === "oscuro") {
-                body.classList.add("oscuro");
-                boton_modo.textContent = "☀️";
-            } else {
-                boton_modo.textContent = "🌙";
-            }
-
-            boton_modo.addEventListener("click", () => {
-                body.classList.toggle("oscuro");
-
-                if (body.classList.contains("oscuro")) {
-                    boton_modo.textContent = "☀️";
-                    localStorage.setItem("modo", "oscuro");
-                } else {
-                    boton_modo.textContent = "🌙"
-                    localStorage.setItem("modo", "claro");
-                }
-            });
-
-
-            function cargarUsuario() {
-                if (localStorage.getItem("usuarioLog")) {
-                    const usuario = JSON.parse(localStorage.getItem("usuarioLog"));
-                    document.getElementById("usuario").textContent = usuario.usuario
-                    console.log("el usuario es:" + usuario.usuario)
-                    document.getElementById("boton_cerrar").style.display = "block"
-                }
-            }
-
-            cargarUsuario();
-
-
-            boton_cerrar.addEventListener("click", () => {
-                localStorage.removeItem("usuarioLog");
-                sessionStorage.removeItem("usuarioLog");
-                location.reload();
-            })
-
-        </script>
     </header>
     <nav>
         <a href="../index.html">INICIO</a>
@@ -102,12 +57,16 @@
             </p>
         </div>
     </article>
+
+    <footer>
+        <h2 class="titulo">Urban Kicks</h2>
+        <h3 style="padding-bottom: 5px; padding-top: 5px;">Sobre Nosotros:</h3>
+        <a href="https://github.com/joacomoron">Joaquin Moron</a>
+        <a href="https://github.com/MontiStefano">Stefano Monti</a>
+    </footer>
+
+    <script src="../js/general.js" defer></script>
 </body>
-<footer>
-    <h2 class="titulo">FOOTER</h2>
-    <h3>Sobre Nosotros</h3>
-    <h4 style="color:lightgrey">Datos Joaco</h4>
-    <h4 style="color:lightgrey">Datos Stefano</h4>
-</footer>
+
 
 </html>

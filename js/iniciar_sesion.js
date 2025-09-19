@@ -73,11 +73,11 @@ formularioInicio.addEventListener("submit", async function (e) {
       sessionStorage.setItem("usuarioLog", JSON.stringify(usuarioValido));                             // guarda el usuario logeado en SESION storage
       sessionStorage.setItem("carrito", JSON.stringify(carritoValido));
       console.log(sessionStorage.getItem("usuarioLog") + " Guardado en sesion storage")               // muestra en consola
-      console.log(sessionStorage.getItem("carrito") + " Guardado en local storage")
+      console.log(sessionStorage.getItem("carrito") + " Guardado en sesion storage")
     }
 
     alert("Usuario logeado con exito")                                         // muestra un mensaje
-    //window.location.href = `../index.html?user=${usuario}`;                   // vuelve al inicio
+    window.location.href = `../index.html`;                                   // vuelve al inicio
   }
   
 });
@@ -177,84 +177,4 @@ formularioRegistro.addEventListener("submit", async function (e) {
     
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function cargarUsuario(){
-    if(localStorage.getItem("usuarioLog")){
-        const usuario = JSON.parse(localStorage.getItem("usuarioLog"));
-        document.getElementById("usuario").textContent = usuario.usuario
-        console.log("el usuario es:" + usuario.usuario)
-        document.getElementById("boton_cerrar").style.display = "block"
-    }
-}
-
-cargarUsuario();
-
-
-
-
-
-boton_cerrar.addEventListener("click", () => {
-    localStorage.removeItem("usuarioLog");
-    sessionStorage.removeItem("usuarioLog");
-    location.reload();
-})
-
-
-
-
-
-
-//modo oscuro/claro
-
-const boton_modo = document.getElementById("boton_modo");
-const body = document.body;
-
-const modo_guardado = localStorage.getItem("modo"); //revisa que modo hay guardado
-
-if (modo_guardado === "oscuro") {
-  body.classList.add("oscuro");
-  boton_modo.textContent = "☀️";
-} else {
-  boton_modo.textContent = "🌙";
-}
-
-boton_modo.addEventListener("click", () => {
-    body.classList.toggle("oscuro");
-
-    if (body.classList.contains("oscuro")) {
-        boton_modo.textContent = "☀️";
-        localStorage.setItem("modo", "oscuro");
-    } else {
-        boton_modo.textContent = "🌙"
-        localStorage.setItem("modo", "claro");
-    }
-});
-
 

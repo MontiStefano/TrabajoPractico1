@@ -8,11 +8,11 @@
 
 
 body.oscuro {
-  --color1: #4F5D75;
-  --color2: #E76F51; 
-  --color3: #2D3142;
-  --color4: #2D3142;
-  --color5: #4F5D75; 
+    --color1: #4F5D75;
+    --color2: #E76F51;
+    --color3: #2D3142;
+    --color4: #2D3142;
+    --color5: #4F5D75;
 }
 
 * {
@@ -66,24 +66,26 @@ header .titulo {
     cursor: pointer;
 }
 
-.contenedorUsuario{
+.contenedorUsuario {
     display: flex;
     text-align: center;
     white-space: nowrap;
+    align-items: center;
+    margin-right: 0.5rem;
 }
 
-.contenedorUsuario #usuario{
+.contenedorUsuario #usuario {
     padding: 1rem;
     color: white;
     font-size: 1.5rem;
 }
 
-.contenedorUsuario #boton_cerrar{
-    height: 60px;
+.contenedorUsuario #boton_cerrar {
+    height: 40px;
     width: 60px;
     font-size: 1.8rem;
-    background-color: #4F5D75;
-    border-radius: 100%;
+    background-color: var(--color2);
+    border-radius: 10px;
     display: none;
 }
 
@@ -120,9 +122,111 @@ nav a:hover {
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background: var(--color3);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer a {
+    padding: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: grey;
+}
+
+
+/* En Laptop */
+@media (max-width: 992px) {
+
+    /* para el titulo */
+    header {
+        padding: 1.7rem 8%;
+    }
+
+    header .logo {
+        width: 125px;
+    }
+
+    header .titulo {
+        font-size: 1.2rem;
+    }
+
+}
+
+/* En Tablet*/
+@media (max-width: 768px) {
+
+    /* para el titulo */
+    header {
+        padding: 1.5rem 5%;
+    }
+
+    header .logo {
+        width: 100px;
+    }
+
+    header .titulo {
+        font-size: 1rem;
+    }
+
+    .contenedorUsuario {
+    flex-direction: column;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+
+
+}
+
+/* En celular */
+@media (max-width: 480px) {
+
+    /* para el titulo */
+    header {
+        padding: 1rem 5%;
+    }
+
+    header .logo {
+        width: 80px;
+    }
+
+    header .titulo {
+        font-size: 0.8rem;
+    }
+
+}
+
+
+
+
+
 @font-face {
     font-family: 'Titulo';
     src: url('../assets/fonts/Dreamline2.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@keyframes aparecer_nav {
+    from {
+        transform: translateY(-20px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }

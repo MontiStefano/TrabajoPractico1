@@ -6,25 +6,25 @@ async function cargarProductoEspecifico() {
         const infoUrl = new URLSearchParams(window.location.search); // toma TODOS los parametros de la URL generada
         const idUrl = infoUrl.get("id"); // toma el ID de la URL
 
-        const response = await fetch(`http://localhost:3000/productos/${idUrl}`);
+        const response = await fetch(`http://localhost:3000/productos/${idUrl}`);       // fetch GET a productos solamente con el producto de ID = idUrl
+        const productoEsp = await response.json();                                        // guarda el objeto en productoEsp     
 
-        const productos = await response.json();
-        console.log(productos);
+        console.log(productoEsp);
 
-        const div =  document.createElement("div");
+        const div = document.createElement("div");
         const divViejo = document.getElementById("contenedorProducto");
-        div.innerHTML = 
-        `<div class="completo">
+        div.innerHTML =
+            `<div class="completo">
             <div class="contenedor_imagen">
-                <img src="../assets/images/zapatillas/${productos.imagen}" alt="Auriculares" class="imagenPrincipal" id="imagen">
+                <img src="../assets/images/zapatillas/${productoEsp.imagen}" alt="Auriculares" class="imagenPrincipal" id="imagen">
             </div>
 
             <div class="contenedor_texto">
                 <div>
-                    <h2 class="titulo_producto">${productos.nombre}</h2>
+                    <h2 class="titulo_producto">${productoEsp.nombre}</h2>
                 </div>
                 <div class="contenedor_precio">
-                    <p class="precio">$${productos.precio}</p>
+                    <p class="precio">$${productoEsp.precio}</p>
                 </div>
                 <div class="contenedor_envio">
                     <p class="envio">Envio Gratis. <br> Llega en 8 dias.</p>
@@ -32,7 +32,7 @@ async function cargarProductoEspecifico() {
                 <div class="contenedor_botones">
                     <button class="botonElemento" id="boton_comprar">Comprar Ahora</button>
                     <button class="botonElemento" id="boton_carrito">Agregar al Carrito</button>
-                    <input type="number" name="" class="cantidad" step="1">
+                    <input type="number" value="1" class="cantidad" step="1" max="25" min="1">
                 </div>
                 <div class="contenedor_medios">
                     <h3>Medios de Pago:</h3>
@@ -46,19 +46,19 @@ async function cargarProductoEspecifico() {
 
                 </div>
                 <div class="contenedor_estrellas">
-                    <h3 class="calificacion">${productos.calificacion}</h3>
+                    <h3 class="calificacion">${productoEsp.calificacion}</h3>
                 </div>
                 <div>
 
                     <h3 class="descripcion">Descripción del producto:</h3> 
-                    <p class="descripcion_parrafo">${productos.descripcionDetallada}</p> <br>
+                    <p class="descripcion_parrafo">${productoEsp.descripcionDetallada}</p> <br>
                     <h3 class="descripcion">Características:</h3>
                     <p class="descripcion_parrafo">
-                        •Talle: ${productos.talle} <br> 
-                        •Color: ${productos.color} <br>
-                        •Peso: ${productos.peso} <br>
-                        •Marca: ${productos.marca} <br>
-                        •Tipo: ${productos.tipo} 
+                        •Talle: ${productoEsp.talle} <br> 
+                        •Color: ${productoEsp.color} <br>
+                        •Peso: ${productoEsp.peso} <br>
+                        •Marca: ${productoEsp.marca} <br>
+                        •Tipo: ${productoEsp.tipo} 
 
                     </p>
                 </div>
@@ -68,112 +68,79 @@ async function cargarProductoEspecifico() {
         divViejo.appendChild(div);
 
 
+        const btnComprar = document.getElementById('boton_comprar');
+        const btnCarrito = document.getElementById('boton_carrito');
+
+
+        btnCarrito.addEventListener('click', async function () {
+            const cantidad = parseInt(document.querySelector('.cantidad').value);
+
+            const carrito = tomarCarrito();
+            console.log("Carrito antiguo:" + JSON.stringify(carrito))
+
+
+            const productoExistente = carrito.productosCarrito.find(item => item.id_producto === idUrl)
+
+            if (productoExistente) {
+                productoExistente.cantidad += cantidad
+            } else {
+                carrito.productosCarrito.push({ 'id_producto': idUrl, 'cantidad': cantidad });
+            }
+
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+
+            await fetch(`http://localhost:3000/carritos/${carrito.id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(carrito)
+            })
+            console.log("Carrito actualizado en el servidor: " + JSON.stringify(carrito))
+            window.location.href = `../index.html`;
+        });
+
+        btnComprar.addEventListener('click', async function () {
+            const cantidad = parseInt(document.querySelector('.cantidad').value);
+
+            const carrito = tomarCarrito();
+            console.log("Carrito antiguo:" + JSON.stringify(carrito))
+
+
+            const productoExistente = carrito.productosCarrito.find(item => item.id_producto === idUrl)
+
+            if (productoExistente) {
+                productoExistente.cantidad += cantidad
+            } else {
+                carrito.productosCarrito.push({ 'id_producto': idUrl, 'cantidad': cantidad });
+            }
+
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+
+            await fetch(`http://localhost:3000/carritos/${carrito.id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(carrito)
+            })
+            console.log("Carrito actualizado en el servidor: " + JSON.stringify(carrito))
+            window.location.href = `carrito.html`;
+        });
+
+
     } catch (err) {
         console.error("Error al cargar los productos: ", err);
     }
 }
 
-document.addEventListener("DOMContentLoaded", cargarProductoEspecifico);
+cargarProductoEspecifico();
 
 
-const btnComprar = document.getElementById('boton_comprar');
-const btnCarrito = document.getElementById('boton_carrito');
-const cantidad = document.querySelector('.cantidad');
-
-
-
-/*
-btnCarrito.addEventListener('click', () => {
-    
-    const carrito_guardado = localStorage.getItem("carrito");
-
-    const infoUrl = new URLSearchParams(window.location.search); // toma TODOS los parametros de la URL generada
-    const id_producto = infoUrl.get("id");
-    const cantidad = document.querySelector('cantidad').value;
-
-    
-
-    if(carrito_guardado === ""){
-        fetch("http://localhost:3000/usuarios", {                   // fetch a usuarios
-      method: "POST",                                           // metodo POST para enviar el formulario a la db.json
-      headers: { "Content-Type": "application/json" },          // indica que es formato JSON
-      body: JSON.stringify({ id_producto, cantidad })         // contenido del JSON
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log("Carrito cargado", data);           // muestra en la consola la informacion del usuario registrado
-      alert("Registrado con exito!");                     // muestra un mensaje al usuario
-      contenedor.classList.remove('activo');              // vuelve a la parte de incio de sesion
-    })
-    }else{
-        localStorage.setItem("carrito", "ocupado");
-
-
-
-
-        fetch("http://localhost:3000/usuarios/1")
-        .then(res => res.json())
-        .then(usuario => {
-            const nuevosHobbies = [];
-
-            return fetch("http://localhost:3000/usuarios/1", {
-            method: "PATCH",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ hobbies: nuevosHobbies })
-            });
-        })
-        .then(res => res.json())
-        .then(data => console.log("Actualizado:", data));
-    }
-
-
-});
-
-*/
-
-function cargarUsuario(){
-    if(localStorage.getItem("usuarioLog")){
-        const usuario = JSON.parse(localStorage.getItem("usuarioLog"));
-        document.getElementById("usuario").textContent = usuario.usuario
-        console.log("el usuario es:" + usuario.usuario)
-        document.getElementById("boton_cerrar").style.display = "block"
-    }
-}
-
-cargarUsuario();
-
-
-boton_cerrar.addEventListener("click", () => {
-    localStorage.removeItem("usuarioLog");
-    sessionStorage.removeItem("usuarioLog");
-    location.reload();
-})
-
-
-
-
-// boton modo claro/oscuro
-
-const boton_modo = document.getElementById("boton_modo");
-const body = document.body;
-
-const modo_guardado = localStorage.getItem("modo"); //revisa que modo hay guardado
-
-if (modo_guardado === "oscuro") {
-  body.classList.add("oscuro");
-  boton_modo.textContent = "☀️";
-} else {
-  boton_modo.textContent = "🌙";
-}
-
-boton_modo.addEventListener("click", () => {
-    body.classList.toggle("oscuro");
-
-    if (body.classList.contains("oscuro")) {
-        boton_modo.textContent = "☀️";
-        localStorage.setItem("modo", "oscuro");
+function tomarCarrito() {
+    if (localStorage.getItem('carrito')) {
+        return JSON.parse(localStorage.getItem('carrito'));
+    } else if (sessionStorage.getItem('carrito')) {
+        return JSON.parse(sessionStorageStorage.getItem('carrito'));
     } else {
-        boton_modo.textContent = "🌙"
-        localStorage.setItem("modo", "claro");
+        alert("Error: no se encontro ningun carrito");
     }
-});
+}
+
+
