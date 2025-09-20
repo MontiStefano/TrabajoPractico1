@@ -30,7 +30,9 @@ Las tecnologías usadas son:
 ¿Cómo usar nuestra página?
 -Lo primero que debemos hacer es tener Git instalado en nuestra PC.
 -Luego visitamos el siguiente repositorio: https://github.com/MontiStefano/TrabajoPractico1
--Clonamos el repositorio en nuestra PC con el comando "git clone https://github.com/MontiStefano/TrabajoPractico1" y en la carpeta llamada JSON-Server, mediante Git Bash, ejecutamos el comando "npx json-server --watch db.json" para iniciar la base de datos.
+-Clonamos el repositorio en nuestra PC con el comando "git clone https://github.com/MontiStefano/TrabajoPractico1" 
+-Como requisito es necesario tener instalado JSON SERVER
+-En la carpeta del JSON-Server,mediante la consola CMD, ejecutamos el comando "npx json-server --watch db.json" para iniciar la "base de datos".
 -Por último abrimos el index.html en nuestro navegador, y listo ya estás en el sitio web de Urban Kicks.
 
 Estructura del proyecto:
